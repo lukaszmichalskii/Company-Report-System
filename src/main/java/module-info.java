@@ -9,6 +9,7 @@ module com.companyreportsystem {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
 
     opens com.companyreportsystem to javafx.fxml;
     opens com.companyreportsystem.login;

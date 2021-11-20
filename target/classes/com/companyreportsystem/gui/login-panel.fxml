@@ -41,7 +41,7 @@
                </font>
             </Label>
             <Label fx:id="statementField" alignment="CENTER" layoutX="21.0" layoutY="341.0" prefHeight="17.0" prefWidth="220.0" textFill="RED" />
-            <Button fx:id="loginButton" layoutX="62.0" layoutY="379.0" mnemonicParsing="false" onAction="#validateLogin" prefHeight="37.0" prefWidth="135.0" styleClass="gradient-background" stylesheets="@../styles/styles.css" text="LOG IN" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="62.0" layoutY="379.0" mnemonicParsing="false" onAction="#login" prefHeight="37.0" prefWidth="135.0" styleClass="gradient-background" stylesheets="@../styles/styles.css" text="LOG IN" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="22.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Font name="Agency FB" size="17.0" />
                </font>
             </Label>
-            <PasswordField layoutX="20.0" layoutY="298.0" prefWidth="220.0" promptText="Passowrd" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="298.0" prefWidth="220.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
          </children>
       </AnchorPane>
    </left>
@@ -64,7 +64,7 @@
                   <Font name="Agency FB" size="41.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="275.0" opacity="0.67" text="Log in to acces your account" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="275.0" opacity="0.67" text="Log in to access your account" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="16.0" />
                </font>
