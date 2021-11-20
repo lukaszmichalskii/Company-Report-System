@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.login.LoginController">
+   <left>
+      <AnchorPane prefHeight="492.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="220.0" prefHeight="26.0" prefWidth="63.0" text="Username" textFill="#242544">
+               <font>
+                  <Font name="Agency FB" size="17.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="25.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="108.0" layoutY="41.0" prefWidth="80.0" text="Company" textFill="#242544">
+               <font>
+                  <Font name="Agency FB" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="108.0" layoutY="65.0" prefWidth="80.0" text="Report" textFill="#242544">
+               <font>
+                  <Font name="Agency FB" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="109.0" layoutY="88.0" prefWidth="80.0" text="System" textFill="#242544">
+               <font>
+                  <Font name="Agency FB" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="statementField" alignment="CENTER" layoutX="21.0" layoutY="341.0" prefHeight="17.0" prefWidth="220.0" textFill="RED" />
+            <Button fx:id="loginButton" layoutX="62.0" layoutY="379.0" mnemonicParsing="false" onAction="#validateLogin" prefHeight="37.0" prefWidth="135.0" styleClass="gradient-background" stylesheets="@../styles/styles.css" text="LOG IN" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="22.0" />
+               </font>
+            </Button>
+            <TextField fx:id="usernameField" layoutX="20.0" layoutY="246.0" prefWidth="220.0" promptText="Username" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <Label layoutX="23.0" layoutY="272.0" prefHeight="26.0" prefWidth="63.0" text="Password" textFill="#242544">
+               <font>
+                  <Font name="Agency FB" size="17.0" />
+               </font>
+            </Label>
+            <PasswordField layoutX="20.0" layoutY="298.0" prefWidth="220.0" promptText="Passowrd" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="492.0" prefWidth="541.0" style="-fx-background-color: #242544;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="222.0" prefHeight="38.0" prefWidth="210.0" text="Welcome to CRS" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="41.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="275.0" opacity="0.67" text="Log in to acces your account" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="421.0" layoutY="206.0" prefHeight="170.0" prefWidth="30.0" rotate="45.0" style="-fx-background-color: #4488f5;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="427.0" layoutY="310.0" prefHeight="170.0" prefWidth="19.0" rotate="45.0" style="-fx-background-color: #2eb5a5;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="456.0" layoutY="293.0" prefHeight="39.0" prefWidth="23.0" rotate="45.0" style="-fx-background-color: #ef4680;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="41.0" layoutY="-42.0" prefHeight="121.0" prefWidth="36.0" rotate="45.0" style="-fx-background-color: #fe4140;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="66.0" layoutY="5.0" prefHeight="157.0" prefWidth="26.0" rotate="45.0" style="-fx-background-color: #2eb5a5;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="152.0" layoutY="32.0" prefHeight="30.0" prefWidth="3.0" rotate="45.0" style="-fx-background-color: #fe4140;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="41.0" layoutY="36.0" prefHeight="77.0" prefWidth="4.0" rotate="45.0" style="-fx-background-color: #e08156;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="108.0" layoutY="-8.0" prefHeight="53.0" prefWidth="4.0" rotate="45.0" style="-fx-background-color: #ef4680;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="389.0" layoutY="318.0" prefHeight="123.0" prefWidth="5.0" rotate="45.0" style="-fx-background-color: #e08156;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="344.0" layoutY="347.0" prefHeight="44.0" prefWidth="4.0" rotate="45.0" style="-fx-background-color: #fbc426;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="447.0" layoutY="399.0" prefHeight="69.0" prefWidth="41.0" rotate="45.0" style="-fx-background-color: #fe4140;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="343.0" layoutY="408.0" prefHeight="87.0" prefWidth="6.0" rotate="45.0" style="-fx-background-color: #00cc66;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="198.0" layoutY="-53.0" prefHeight="162.0" prefWidth="22.0" rotate="45.0" style="-fx-background-color: #4488f5;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="174.0" layoutY="-35.0" prefHeight="67.0" prefWidth="20.0" rotate="45.0" style="-fx-background-color: #fbc426;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <Pane layoutX="68.0" layoutY="41.0" prefHeight="191.0" prefWidth="7.0" rotate="45.0" style="-fx-background-color: #00cc66;" styleClass="figure" stylesheets="@../styles/styles.css" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="246.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="quitButton" contentDisplay="GRAPHIC_ONLY" layoutX="450.0" layoutY="1.0" mnemonicParsing="false" onAction="#quit" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #242544;" styleClass="button_shape" stylesheets="@../styles/styles.css" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/quit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

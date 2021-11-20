@@ -11,5 +11,6 @@ module com.companyreportsystem {
     requires eu.hansolo.tilesfx;
 
     opens com.companyreportsystem to javafx.fxml;
+    opens com.companyreportsystem.login;
     exports com.companyreportsystem;
 }

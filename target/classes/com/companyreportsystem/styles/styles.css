@@ -1,0 +1,28 @@
+.gradient-background {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #3dbbb1, #09accb);
+}
+
+.line-color {
+    -fx-background-color: #F3ABB5;
+}
+
+.container {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 10;
+}
+
+.button_shape {
+    -fx-background-radius: 10;
+}
+
+.shadow {
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10.0, 0.0, 0.0, 10.0);
+}
+
+.figure {
+    -fx-background-radius: 50;
+}
+
+.admin-panel-highlight {
+    -fx-background-radius: 0 20 20 0;
+}
