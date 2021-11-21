@@ -2,17 +2,8 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #3dbbb1, #09accb);
 }
 
-.line-color {
-    -fx-background-color: #F3ABB5;
-}
-
-.container {
-    -fx-background-color: rgba(255,255,255,0.2);
-    -fx-background-radius: 10;
-}
-
 .button_shape {
-    -fx-background-radius: 10;
+    -fx-background-radius: 50;
 }
 
 .shadow {
@@ -25,4 +16,169 @@
 
 .admin-panel-highlight {
     -fx-background-radius: 0 20 20 0;
+}
+
+.decision {
+    -fx-background-color:  linear-gradient(from 50% 50% to 100% 100%, #33cc33, #FFFFFF);
+    -fx-background-radius: 300;
+}
+
+.decision:hover {
+    -fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #009933, #FFFFFF);
+    -fx-background-radius: 300;
+}
+
+.decision:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.management {
+    -fx-background-color:  linear-gradient(from 50% 50% to 100% 100%, #ffcc66 , #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.management:hover {
+    -fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #ff9900, #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.management:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.permissions {
+    -fx-background-color:  linear-gradient(from 50% 50% to 100% 100%, #ff5050, #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.permissions:hover {
+    -fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #ff0000, #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.permissions:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.analysis {
+    -fx-background-color:  linear-gradient(from 50% 50% to 100% 100%, #6699ff, #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.analysis:hover {
+    -fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #6666ff, #FFFFFF);
+    -fx-background-radius: 200;
+}
+
+.analysis:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.quit {
+    -fx-background-color: #222343;
+    -fx-background-radius: 200;
+}
+
+.quit:hover {
+    -fx-background-color: linear-gradient(from 50% 50% to 100% 100%, #ff0000, #ff3300);
+    -fx-background-radius: 200;
+}
+
+.quit:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.back {
+    -fx-background-color: #222343;
+    -fx-background-radius: 200;
+}
+
+.back:hover {
+    -fx-background-color: #4e5083;
+    -fx-background-radius: 200;
+}
+
+.back:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.add {
+    -fx-background-color: #222343;
+    -fx-background-radius: 300;
+}
+
+.add:hover {
+    -fx-background-color: #48a74c;
+    -fx-background-radius: 300;
+}
+
+.add:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.refresh {
+    -fx-background-color: #222343;
+    -fx-background-radius: 300;
+}
+
+.refresh:hover {
+    -fx-background-color: #b2d4ef;
+    -fx-background-radius: 300;
+}
+
+.refresh:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.add-permission {
+    -fx-background-color: #48a74c;
+    -fx-background-radius: 300;
+}
+
+.add-permission:hover {
+    -fx-background-color: #009900;
+    -fx-background-radius: 300;
+}
+
+.add-permission:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.login {
+    -fx-background-color: #48a74c;
+    -fx-background-radius: 300;
+}
+
+.login:hover {
+    -fx-background-color: #009900;
+    -fx-background-radius: 300;
+}
+
+.login:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.cancel {
+    -fx-background-color: #ff0000;
+    -fx-background-radius: 200;
+}
+
+.cancel:hover {
+    -fx-background-color: #cc0000;
+    -fx-background-radius: 200;
+}
+
+.cancel:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
 }

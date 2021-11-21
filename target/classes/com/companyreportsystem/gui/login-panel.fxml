@@ -17,7 +17,7 @@
          <children>
             <Label layoutX="23.0" layoutY="220.0" prefHeight="26.0" prefWidth="63.0" text="Username" textFill="#242544">
                <font>
-                  <Font name="Agency FB" size="17.0" />
+                  <Font size="13.0" />
                </font>
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="25.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
@@ -41,18 +41,18 @@
                </font>
             </Label>
             <Label fx:id="statementField" alignment="CENTER" layoutX="21.0" layoutY="341.0" prefHeight="17.0" prefWidth="220.0" textFill="RED" />
-            <Button fx:id="loginButton" layoutX="62.0" layoutY="379.0" mnemonicParsing="false" onAction="#login" prefHeight="37.0" prefWidth="135.0" styleClass="gradient-background" stylesheets="@../styles/styles.css" text="LOG IN" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="62.0" layoutY="379.0" mnemonicParsing="false" onAction="#login" prefHeight="37.0" prefWidth="135.0" styleClass="add" stylesheets="@../styles/styles.css" text="LOG IN" textFill="WHITE">
                <font>
-                  <Font name="Agency FB" size="22.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Button>
             <TextField fx:id="usernameField" layoutX="20.0" layoutY="246.0" prefWidth="220.0" promptText="Username" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Label layoutX="23.0" layoutY="272.0" prefHeight="26.0" prefWidth="63.0" text="Password" textFill="#242544">
+            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="298.0" prefWidth="220.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <Label layoutX="23.0" layoutY="271.0" prefHeight="26.0" prefWidth="63.0" text="Password" textFill="#242544">
                <font>
-                  <Font name="Agency FB" size="17.0" />
+                  <Font size="13.0" />
                </font>
             </Label>
-            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="298.0" prefWidth="220.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
          </children>
       </AnchorPane>
    </left>
@@ -89,7 +89,7 @@
                   <Image url="@../img/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="quitButton" contentDisplay="GRAPHIC_ONLY" layoutX="450.0" layoutY="1.0" mnemonicParsing="false" onAction="#quit" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #242544;" styleClass="button_shape" stylesheets="@../styles/styles.css" textFill="WHITE">
+            <Button fx:id="quitButton" contentDisplay="GRAPHIC_ONLY" layoutX="447.0" layoutY="3.0" mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="40.0" styleClass="quit" stylesheets="@../styles/styles.css" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>

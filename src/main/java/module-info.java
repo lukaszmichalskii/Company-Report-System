@@ -13,5 +13,10 @@ module com.companyreportsystem {
 
     opens com.companyreportsystem to javafx.fxml;
     opens com.companyreportsystem.login;
+    opens com.companyreportsystem.decisions;
+    opens com.companyreportsystem.permissions;
+    opens com.companyreportsystem.models;
     exports com.companyreportsystem;
+    exports com.companyreportsystem.userdashboard;
+    opens com.companyreportsystem.userdashboard to javafx.fxml;
 }
