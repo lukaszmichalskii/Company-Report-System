@@ -21,7 +21,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="72.0" prefHeight="39.0" prefWidth="424.0" text="Łukasz Michalski" textFill="WHITE">
+            <Label layoutX="72.0" prefHeight="39.0" prefWidth="424.0" text="User dashboard" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -31,7 +31,7 @@
                   <Image url="@../img/user.png" />
                </image>
             </ImageView>
-            <Label layoutX="72.0" layoutY="33.0" text="Software Engineer" textFill="WHITE" />
+            <Label layoutX="72.0" layoutY="33.0" text="Position / Department" textFill="WHITE" />
          </children>
       </AnchorPane>
    </top>

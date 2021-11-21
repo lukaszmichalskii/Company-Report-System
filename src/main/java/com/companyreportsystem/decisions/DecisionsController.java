@@ -49,7 +49,6 @@ public class DecisionsController implements Initializable {
 
     private final ObservableList<Decision> decisionsObservableList = FXCollections.observableArrayList();
 
-
     @FXML
     void add() {
         SceneCreator.createScene("gui/new-decision-panel.fxml", 400, 500);

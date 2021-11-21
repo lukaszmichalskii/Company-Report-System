@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #222343;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.decisions.AddDecisionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #222343;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.management.AddReviewController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -20,29 +20,29 @@
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="70.0" prefWidth="100.0" text="Subject" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="70.0" prefWidth="100.0" text="Employee" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="110.0" prefWidth="100.0" text="Employee" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="110.0" prefWidth="100.0" text="Position" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="150.0" prefWidth="100.0" text="Priority" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="150.0" prefHeight="28.0" prefWidth="105.0" text="Department" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="190.0" prefWidth="100.0" text="Description" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="190.0" prefWidth="100.0" text="Evaluation" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <TextArea fx:id="descriptionField" layoutX="30.0" layoutY="218.0" prefHeight="100.0" prefWidth="340.0" promptText="Description of decision" stylesheets="@../styles/styles.css" />
-            <TextField fx:id="subjectField" layoutX="140.0" layoutY="70.0" prefHeight="26.0" prefWidth="230.0" promptText="Subject" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <TextField fx:id="employeeField" layoutX="140.0" layoutY="110.0" prefHeight="26.0" prefWidth="230.0" promptText="Firstname Surname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <TextArea fx:id="reviewField" layoutX="30.0" layoutY="218.0" prefHeight="100.0" prefWidth="340.0" promptText="Review" stylesheets="@../styles/styles.css" />
+            <TextField fx:id="employeeField" layoutX="140.0" layoutY="70.0" prefHeight="26.0" prefWidth="230.0" promptText="Fullname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <TextField fx:id="positionField" layoutX="140.0" layoutY="110.0" prefHeight="26.0" prefWidth="230.0" promptText="Position" styleClass="button_shape" stylesheets="@../styles/styles.css" />
             <Button fx:id="saveButton" layoutX="30.0" layoutY="349.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="145.0" stylesheets="@../styles/styles.css" text="Save" textFill="WHITE">
                <font>
                   <Font size="16.0" />
@@ -57,14 +57,14 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <TextField fx:id="priorityField" layoutX="140.0" layoutY="151.0" prefHeight="26.0" prefWidth="230.0" promptText="Priority" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <TextField fx:id="departmentField" layoutX="140.0" layoutY="151.0" prefHeight="26.0" prefWidth="230.0" promptText="Department" styleClass="button_shape" stylesheets="@../styles/styles.css" />
          </children>
       </AnchorPane>
    </center>
    <top>
       <AnchorPane prefHeight="64.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="110.0" layoutY="20.0" text="New Decision" textFill="WHITE">
+            <Label layoutX="120.0" layoutY="14.0" text="New Review" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>

@@ -27,7 +27,7 @@ public class UserDashboardController {
 
     @FXML
     private void gotoManagementDashboard() {
-        System.out.println("Click");
+        SectionLoader.load("gui/management-panel.fxml", borderpane);
     }
 
     @FXML

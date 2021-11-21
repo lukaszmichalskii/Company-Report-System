@@ -1,4 +1,4 @@
-package com.companyreportsystem.decisions;
+package com.companyreportsystem.management;
 
 import com.companyreportsystem.databaseconnection.DatabaseConnection;
 import javafx.fxml.FXML;
@@ -9,7 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddDecisionController {
+public class AddReviewController {
+
     @FXML
     private Button cancelButton;
 
@@ -17,16 +18,16 @@ public class AddDecisionController {
     private DatePicker dateField;
 
     @FXML
-    private TextArea descriptionField;
+    private TextField departmentField;
 
     @FXML
     private TextField employeeField;
 
     @FXML
-    private TextField priorityField;
+    private TextField positionField;
 
     @FXML
-    private TextField subjectField;
+    private TextArea reviewField;
 
     @FXML
     void cancel() {
@@ -38,18 +39,18 @@ public class AddDecisionController {
     void save() {
         Connection connectDB = DatabaseConnection.getConnection();
 
-        String query = "INSERT INTO `database`.decisions (date, subject, employee, priority, description) VALUES (?,?,?,?,?)";
+        String query = "INSERT INTO `database`.reviews (date, employee, position, department, evaluation) VALUES (?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement = connectDB.prepareStatement(query);
             preparedStatement.setString(1, String.valueOf(dateField.getValue()));
-            preparedStatement.setString(2, subjectField.getText());
-            preparedStatement.setString(3, employeeField.getText());
-            preparedStatement.setString(4, priorityField.getText());
-            preparedStatement.setString(5, descriptionField.getText());
+            preparedStatement.setString(2, employeeField.getText());
+            preparedStatement.setString(3, positionField.getText());
+            preparedStatement.setString(4, departmentField.getText());
+            preparedStatement.setString(5, reviewField.getText());
             preparedStatement.execute();
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("Decision added successfully");
+            alert.setContentText("Review added successfully");
             alert.setHeaderText(null);
             alert.showAndWait();
         } catch (SQLException e) {

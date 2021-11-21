@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1280.0" style="-fx-background-color: #222343;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.permissions.PermissionsController">
-   <top>
+   <center>
       <AnchorPane prefHeight="666.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="back" stylesheets="@../styles/styles.css" text="Button">
+            <Button fx:id="backButton" contentDisplay="GRAPHIC_ONLY" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="50.0" styleClass="back" stylesheets="@../styles/styles.css" text="Button">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -39,60 +38,47 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="32.0" layoutY="174.0" prefWidth="250.0" promptText="Firstname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <TextField fx:id="firstnameField" layoutX="32.0" layoutY="174.0" prefWidth="250.0" promptText="Firstname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
             <Label layoutX="32.0" layoutY="210.0" prefWidth="250.0" text="Surname" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="32.0" layoutY="237.0" prefWidth="250.0" promptText="Surname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Label layoutX="32.0" layoutY="275.0" prefWidth="250.0" text="Position" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="32.0" layoutY="302.0" prefWidth="250.0" promptText="Position" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Label layoutX="32.0" layoutY="339.0" prefWidth="250.0" text="Department" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="32.0" layoutY="366.0" prefWidth="250.0" promptText="Department" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Label layoutX="338.0" layoutY="112.0" text="Login" textFill="WHITE">
+            <TextField fx:id="surnameField" layoutX="32.0" layoutY="237.0" prefWidth="250.0" promptText="Surname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <Label layoutX="32.0" layoutY="284.0" text="Login" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="338.0" layoutY="147.0" prefWidth="250.0" text="Email" textFill="WHITE">
+            <Label layoutX="32.0" layoutY="321.0" prefWidth="250.0" text="Username" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="338.0" layoutY="174.0" prefWidth="250.0" promptText="Email" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Label layoutX="338.0" layoutY="210.0" prefWidth="250.0" text="Username" textFill="WHITE">
+            <Label layoutX="32.0" layoutY="385.0" prefWidth="250.0" text="Password" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="338.0" layoutY="275.0" prefWidth="250.0" text="Password" textFill="WHITE">
+            <Label layoutX="32.0" layoutY="448.0" prefWidth="250.0" text="Confirm password" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="338.0" layoutY="339.0" prefWidth="250.0" text="Confirm password" textFill="WHITE">
+            <TextField fx:id="usernameField" layoutX="32.0" layoutY="348.0" prefWidth="250.0" promptText="Username" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <PasswordField fx:id="passwordField" layoutX="32.0" layoutY="412.0" prefWidth="250.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <PasswordField fx:id="confirmPasswordField" layoutX="32.0" layoutY="475.0" prefWidth="250.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <Button fx:id="addPermissionButton" layoutX="32.0" layoutY="557.0" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="250.0" styleClass="add-permission" stylesheets="@../styles/styles.css" text="Add permission" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="338.0" layoutY="237.0" prefWidth="250.0" promptText="Email" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <PasswordField layoutX="338.0" layoutY="302.0" prefWidth="250.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <PasswordField layoutX="338.0" layoutY="366.0" prefWidth="250.0" promptText="Password" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Button layoutX="31.0" layoutY="477.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="add-permission" stylesheets="@../styles/styles.css" text="Add permission" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="28.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
+            <Label fx:id="informationField" layoutX="592.0" layoutY="318.0" prefHeight="18.0" prefWidth="450.0" textFill="#06c116">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </top>
+   </center>
 </BorderPane>

@@ -36,24 +36,4 @@ public class Decision {
     public String getDescription() {
         return description;
     }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public void setEmployee(String employee) {
-        this.employee = employee;
-    }
-
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
