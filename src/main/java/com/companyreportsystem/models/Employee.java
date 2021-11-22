@@ -1,8 +1,9 @@
 package com.companyreportsystem.models;
 
 public class Employee {
-    String name;
-    String position, department;
+    private final String name;
+    private final String position;
+    private final String department;
 
     public Employee(String name, String position, String department) {
         this.name = name;

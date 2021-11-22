@@ -43,7 +43,7 @@
             <TextArea fx:id="descriptionField" layoutX="30.0" layoutY="218.0" prefHeight="100.0" prefWidth="340.0" promptText="Description of decision" stylesheets="@../styles/styles.css" />
             <TextField fx:id="subjectField" layoutX="140.0" layoutY="70.0" prefHeight="26.0" prefWidth="230.0" promptText="Subject" styleClass="button_shape" stylesheets="@../styles/styles.css" />
             <TextField fx:id="employeeField" layoutX="140.0" layoutY="110.0" prefHeight="26.0" prefWidth="230.0" promptText="Firstname Surname" styleClass="button_shape" stylesheets="@../styles/styles.css" />
-            <Button fx:id="saveButton" layoutX="30.0" layoutY="349.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="145.0" stylesheets="@../styles/styles.css" text="Save" textFill="WHITE">
+            <Button fx:id="saveButton" layoutX="30.0" layoutY="369.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="145.0" stylesheets="@../styles/styles.css" text="Save" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -52,12 +52,13 @@
                   <String fx:value="add-permission" />
                </styleClass>
             </Button>
-            <Button fx:id="cancelButton" layoutX="224.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="145.0" styleClass="cancel" stylesheets="@../styles/styles.css" text="Cancel" textFill="WHITE">
+            <Button fx:id="cancelButton" layoutX="224.0" layoutY="369.0" mnemonicParsing="false" onAction="#cancel" prefHeight="40.0" prefWidth="145.0" styleClass="cancel" stylesheets="@../styles/styles.css" text="Cancel" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
             <TextField fx:id="priorityField" layoutX="140.0" layoutY="151.0" prefHeight="26.0" prefWidth="230.0" promptText="Priority" styleClass="button_shape" stylesheets="@../styles/styles.css" />
+            <Label fx:id="warningMessage" alignment="CENTER" layoutX="30.0" layoutY="336.0" prefHeight="18.0" prefWidth="340.0" textFill="RED" />
          </children>
       </AnchorPane>
    </center>

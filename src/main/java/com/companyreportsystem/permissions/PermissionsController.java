@@ -39,7 +39,7 @@ public class PermissionsController {
     @FXML
     void add() {
         // check if fields are not empty
-        if (!usernameField.getText().isBlank() || !passwordField.getText().isBlank() || !confirmPasswordField.getText().isBlank() || !firstnameField.getText().isBlank() || !surnameField.getText().isBlank()) {
+        if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank() && !confirmPasswordField.getText().isBlank() && !firstnameField.getText().isBlank() && !surnameField.getText().isBlank()) {
             // check if passwords are the same
             if (Objects.equals(passwordField.getText(), confirmPasswordField.getText())) {
                 Connection connectDB = DatabaseConnection.getConnection();
@@ -66,6 +66,10 @@ public class PermissionsController {
                                 informationField.setTextFill(Color.GREEN);
                                 informationField.setText("Permission added successfully");
                             } catch (SQLException e) {
+                                Alert alert = new Alert(Alert.AlertType.ERROR);
+                                alert.setContentText("Error while saving data. Review your data.");
+                                alert.setHeaderText(null);
+                                alert.showAndWait();
                                 e.printStackTrace();
                                 e.getCause();
                             }

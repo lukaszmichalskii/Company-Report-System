@@ -40,22 +40,36 @@ public class AddReviewController {
         Connection connectDB = DatabaseConnection.getConnection();
 
         String query = "INSERT INTO `database`.reviews (date, employee, position, department, evaluation) VALUES (?,?,?,?,?)";
-        try {
-            PreparedStatement preparedStatement = connectDB.prepareStatement(query);
-            preparedStatement.setString(1, String.valueOf(dateField.getValue()));
-            preparedStatement.setString(2, employeeField.getText());
-            preparedStatement.setString(3, positionField.getText());
-            preparedStatement.setString(4, departmentField.getText());
-            preparedStatement.setString(5, reviewField.getText());
-            preparedStatement.execute();
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("Review added successfully");
+        if (!employeeField.getText().isBlank() && !positionField.getText().isBlank() && !departmentField.getText().isBlank() && !reviewField.getText().isBlank()) {
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement(query);
+                preparedStatement.setString(1, String.valueOf(dateField.getValue()));
+                preparedStatement.setString(2, employeeField.getText());
+                preparedStatement.setString(3, positionField.getText());
+                preparedStatement.setString(4, departmentField.getText());
+                preparedStatement.setString(5, reviewField.getText());
+                preparedStatement.execute();
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Review added successfully");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                cancel();
+            } catch (SQLException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Error while saving data. Review your data.");
+                alert.setHeaderText(null);
+                alert.showAndWait();
+                e.printStackTrace();
+                e.getCause();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Missing data.");
             alert.setHeaderText(null);
             alert.showAndWait();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            e.getCause();
         }
+
     }
 }

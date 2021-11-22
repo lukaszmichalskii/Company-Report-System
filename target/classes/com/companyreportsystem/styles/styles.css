@@ -182,3 +182,38 @@
     -fx-background-color: #2F2B43;
     -fx-background-radius: 300;
 }
+
+ .delete {
+     -fx-background-color: #222343;
+     -fx-background-radius: 300;
+ }
+
+.delete:hover {
+    -fx-background-color: #e84033;
+    -fx-background-radius: 300;
+}
+
+.delete:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 300;
+}
+
+.table-view1 {
+    -fx-background-color:#222343;
+    -fx-background-radius:20 20 10 10;
+}
+.table-view1 .column-header-background{
+    -fx-background-color: #222343;
+    -fx-background-radius:20;
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view1 .column-header, .table-view .filler{
+    -fx-size:30px;
+    -fx-border-width: 10 10 10 10;
+    -fx-background-color:transparent;
+
+}
+
+.table-view1 .column-header .label {
+    -fx-text-fill: white;
+}

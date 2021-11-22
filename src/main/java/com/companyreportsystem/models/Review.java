@@ -3,10 +3,15 @@ package com.companyreportsystem.models;
 import java.sql.Date;
 
 public class Review {
-    Date date;
-    String employee, position, department, evaluation;
+    private final Integer id;
+    private final Date date;
+    private final String employee;
+    private final String position;
+    private final String department;
+    private final String evaluation;
 
-    public Review(Date date, String employee, String position, String department, String evaluation) {
+    public Review(Integer id, Date date, String employee, String position, String department, String evaluation) {
+        this.id = id;
         this.date = date;
         this.employee = employee;
         this.position = position;
@@ -32,5 +37,9 @@ public class Review {
 
     public String getEvaluation() {
         return evaluation;
+    }
+
+    public Integer getID() {
+        return id;
     }
 }

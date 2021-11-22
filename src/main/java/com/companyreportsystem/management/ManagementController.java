@@ -49,10 +49,48 @@ public class ManagementController implements Initializable {
 
     private final ObservableList<Review> reviewsObservableList = FXCollections.observableArrayList();
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Connection connectDB = DatabaseConnection.getConnection();
+
+        String query = "SELECT * FROM `database`.reviews";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet reviews = statement.executeQuery(query);
+
+            while (reviews.next()) {
+                Employee employee = new Employee(reviews.getString("employee"), reviews.getString("position"), reviews.getString("department"));
+                reviewsObservableList.add(new Review(reviews.getInt("id"), reviews.getDate("date"), employee.getName(), employee.getPosition(), employee.getDepartment(), reviews.getString("evaluation")));
+            }
+
+            initData();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 
     @FXML
     private void add() {
         SceneCreator.createScene("gui/new-review-panel.fxml", 400, 500);
+    }
+
+    @FXML
+    private void delete() {
+        try {
+            Review review = reviewsTable.getSelectionModel().getSelectedItem();
+            String deleteQuery = "DELETE FROM `database`.reviews WHERE id  ="+review.getID();
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
+            preparedStatement.execute();
+            refresh();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ex.getCause();
+        }
     }
 
     @FXML
@@ -74,7 +112,7 @@ public class ManagementController implements Initializable {
 
             while (reviews.next()){
                 Employee employee = new Employee(reviews.getString("employee"), reviews.getString("position"), reviews.getString("department"));
-                reviewsObservableList.add(new Review(reviews.getDate("date"), employee.getName(), employee.getPosition(), employee.getDepartment(), reviews.getString("evaluation")));
+                reviewsObservableList.add(new Review(reviews.getInt("id"), reviews.getDate("date"), employee.getName(), employee.getPosition(), employee.getDepartment(), reviews.getString("evaluation")));
                 reviewsTable.setItems(reviewsObservableList);
             }
 
@@ -119,28 +157,5 @@ public class ManagementController implements Initializable {
         sortedData.comparatorProperty().bind(reviewsTable.comparatorProperty());
 
         reviewsTable.setItems(sortedData);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Connection connectDB = DatabaseConnection.getConnection();
-
-        String query = "SELECT * FROM `database`.reviews";
-
-        try {
-            Statement statement = connectDB.createStatement();
-            ResultSet reviews = statement.executeQuery(query);
-
-            while (reviews.next()) {
-                Employee employee = new Employee(reviews.getString("employee"), reviews.getString("position"), reviews.getString("department"));
-                reviewsObservableList.add(new Review(reviews.getDate("date"), employee.getName(), employee.getPosition(), employee.getDepartment(), reviews.getString("evaluation")));
-            }
-
-            initData();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            e.getCause();
-        }
     }
 }

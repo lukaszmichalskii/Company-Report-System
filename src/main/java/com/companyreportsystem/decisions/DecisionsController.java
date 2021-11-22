@@ -49,9 +49,48 @@ public class DecisionsController implements Initializable {
 
     private final ObservableList<Decision> decisionsObservableList = FXCollections.observableArrayList();
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Connection connectDB = DatabaseConnection.getConnection();
+
+        String query = "SELECT * FROM `database`.decisions";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet decisions = statement.executeQuery(query);
+
+            while (decisions.next()) {
+                decisionsObservableList.add(new Decision(decisions.getInt("id"), decisions.getDate("date"), decisions.getString("subject"),
+                        decisions.getString("employee"), decisions.getString("priority"), decisions.getString("description")));
+            }
+
+            initData();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
     @FXML
-    void add() {
+    private void add() {
         SceneCreator.createScene("gui/new-decision-panel.fxml", 400, 500);
+    }
+
+    @FXML
+    private void delete() {
+        try {
+            Decision decision = decisionTable.getSelectionModel().getSelectedItem();
+            String deleteQuery = "DELETE FROM `database`.decisions WHERE id  ="+decision.getID();
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
+            preparedStatement.execute();
+            refresh();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            ex.getCause();
+        }
     }
 
     @FXML
@@ -72,7 +111,7 @@ public class DecisionsController implements Initializable {
             ResultSet decisions = preparedStatement.executeQuery();
 
             while (decisions.next()){
-                decisionsObservableList.add(new Decision(decisions.getDate("date"), decisions.getString("subject"),
+                decisionsObservableList.add(new Decision(decisions.getInt("id"), decisions.getDate("date"), decisions.getString("subject"),
                         decisions.getString("employee"), decisions.getString("priority"), decisions.getString("description")));
                 decisionTable.setItems(decisionsObservableList);
             }
@@ -83,29 +122,6 @@ public class DecisionsController implements Initializable {
         } catch (SQLException ex) {
             ex.printStackTrace();
             ex.getCause();
-        }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Connection connectDB = DatabaseConnection.getConnection();
-
-        String query = "SELECT * FROM `database`.decisions";
-
-        try {
-            Statement statement = connectDB.createStatement();
-            ResultSet decisions = statement.executeQuery(query);
-
-            while (decisions.next()) {
-                decisionsObservableList.add(new Decision(decisions.getDate("date"), decisions.getString("subject"),
-                        decisions.getString("employee"), decisions.getString("priority"), decisions.getString("description")));
-            }
-
-            initData();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            e.getCause();
         }
     }
 
@@ -142,4 +158,6 @@ public class DecisionsController implements Initializable {
 
         decisionTable.setItems(sortedData);
     }
+
+
 }

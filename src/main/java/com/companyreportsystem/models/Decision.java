@@ -3,18 +3,24 @@ package com.companyreportsystem.models;
 import java.sql.Date;
 
 public class Decision {
-    private Date date;
-    private String subject;
-    private String employee;
-    private String priority;
-    private String description;
+    private final Integer id;
+    private final Date date;
+    private final String subject;
+    private final String employee;
+    private final String priority;
+    private final String description;
 
-    public Decision(Date date, String subject, String employee, String priority, String description) {
+    public Decision(Integer id, Date date, String subject, String employee, String priority, String description) {
+        this.id = id;
         this.date = date;
         this.subject = subject;
         this.employee = employee;
         this.priority = priority;
         this.description = description;
+    }
+
+    public Integer getID() {
+        return id;
     }
 
     public Date getDate() {
@@ -36,4 +42,6 @@ public class Decision {
     public String getDescription() {
         return description;
     }
+
+
 }
