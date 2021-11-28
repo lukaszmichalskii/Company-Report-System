@@ -11,19 +11,10 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="decisionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.decisions.DecisionsController">
+<BorderPane fx:id="decisionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.guicontrollers.decisions.DecisionsController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222343;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="backButton" contentDisplay="GRAPHIC_ONLY" layoutY="4.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="50.0" styleClass="back" stylesheets="@../styles/styles.css" text="Button">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/back.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <Label layoutX="550.0" layoutY="-3.0" text="Decisions" textFill="WHITE">
                <font>
                   <Font size="43.0" />

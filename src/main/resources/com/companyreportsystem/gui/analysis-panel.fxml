@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="decisionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companyreportsystem.guicontrollers.analysis.AnalysisController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222343;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="550.0" layoutY="-3.0" text="Analysis" textFill="WHITE">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="employeeChoiceBox" layoutX="144.0" layoutY="68.0" onDragDone="#showAnalysis" prefHeight="25.0" prefWidth="355.0" />
+            <Label layoutX="40.0" layoutY="61.0" text="Employee" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="31.0" />
+               </font>
+            </Label>
+            <Button fx:id="showAnalysisButton" layoutX="516.0" layoutY="68.0" mnemonicParsing="false" onAction="#showAnalysis" prefHeight="25.0" prefWidth="91.0" styleClass="add-permission" stylesheets="@../styles/styles.css" text="Show analysis" textFill="WHITE" />
+            <LineChart fx:id="reviewsPlot" layoutX="40.0" layoutY="124.0" prefHeight="500.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF;" title="Reviews">
+              <xAxis>
+                <NumberAxis label="Reviews" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Performance" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

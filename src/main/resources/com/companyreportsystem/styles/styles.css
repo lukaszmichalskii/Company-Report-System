@@ -217,3 +217,18 @@
 .table-view1 .column-header .label {
     -fx-text-fill: white;
 }
+
+.slide-buttons {
+    -fx-background-color: #222343;
+    -fx-background-radius:0 10 10 0;
+}
+
+.slide-buttons:hover {
+    -fx-background-color: #4e5083;
+    -fx-background-radius:0 10 10 0;
+}
+
+.slide-buttons:pressed {
+    -fx-background-color: #2F2B43;
+    -fx-background-radius:0 10 10 0;
+}
