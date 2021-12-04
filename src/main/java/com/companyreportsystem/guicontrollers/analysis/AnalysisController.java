@@ -1,8 +1,8 @@
 package com.companyreportsystem.guicontrollers.analysis;
 
-import com.companyreportsystem.systemlogic.errorhandling.alertmanager.AlertManager;
-import com.companyreportsystem.systemlogic.configurators.choiceboxconfigurators.EmployeeChoiceBoxConfigurator;
-import com.companyreportsystem.systemlogic.initializators.LinePlotInitialization;
+import com.companyreportsystem.helpers.errorhandling.alertmanager.AlertManager;
+import com.companyreportsystem.helpers.configurators.choiceboxconfigurators.EmployeeChoiceBoxConfigurator;
+import com.companyreportsystem.helpers.initializators.LinePlotInitialization;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
@@ -20,12 +20,10 @@ public class AnalysisController implements Initializable {
     private LineChart<Number, Number> reviewsPlot;
 
     private final EmployeeChoiceBoxConfigurator employeeChoiceBoxConfigurator;
-    private final LinePlotInitialization linePlotInitialization;
     private final AlertManager alertManager;
 
     public AnalysisController() {
         employeeChoiceBoxConfigurator = new EmployeeChoiceBoxConfigurator();
-        linePlotInitialization = new LinePlotInitialization();
         alertManager = new AlertManager();
     }
 
@@ -35,11 +33,8 @@ public class AnalysisController implements Initializable {
     }
 
     private void initReviewsScatterPlot(String firstname, String lastname, String position, String department) {
-        String query = "SELECT evaluation FROM `database`.reviews WHERE firstname = '" + firstname + "' " +
-                "AND lastname = '" + lastname + "' " +
-                "AND position = '" + position + "' " +
-                "AND department = '" + department + "'";
-        linePlotInitialization.init(query, reviewsPlot);
+        LinePlotInitialization linePlotInitialization = new LinePlotInitialization(firstname, lastname, position, department);
+        linePlotInitialization.init(reviewsPlot);
     }
 
     private void initEmployeeChoiceBox() {

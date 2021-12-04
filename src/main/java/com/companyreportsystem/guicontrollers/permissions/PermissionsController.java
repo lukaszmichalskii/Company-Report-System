@@ -1,10 +1,10 @@
 package com.companyreportsystem.guicontrollers.permissions;
 
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseResponse;
-import com.companyreportsystem.systemlogic.initializators.ChoiceBoxInitialization;
-import com.companyreportsystem.systemlogic.initializators.DepartmentInitialization;
-import com.companyreportsystem.systemlogic.initializators.PositionsInitialization;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseResponse;
+import com.companyreportsystem.helpers.initializators.ChoiceBoxInitialization;
+import com.companyreportsystem.helpers.initializators.DepartmentInitialization;
+import com.companyreportsystem.helpers.initializators.PositionsInitialization;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -53,9 +53,7 @@ public class PermissionsController implements Initializable {
     void add() {
         if (isDataFieldsBlank()) {
             if (isPasswordsEquals()) {
-                String query = "SELECT * FROM `database`.user_account";
-                DatabaseResponse response = databaseManager.insertPermission(query,
-                        usernameField.getText(),
+                DatabaseResponse response = databaseManager.insertPermission(usernameField.getText(),
                         firstnameField.getText(),
                         surnameField.getText(),
                         passwordField.getText(),

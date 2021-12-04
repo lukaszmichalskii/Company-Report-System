@@ -1,16 +1,22 @@
 package com.companyreportsystem.guicontrollers.decisions;
 
-import com.companyreportsystem.systemlogic.errorhandling.alertmanager.AlertManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseResponse;
+import com.companyreportsystem.helpers.errorhandling.alertmanager.AlertManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseResponse;
+import com.companyreportsystem.helpers.initializators.ChoiceBoxInitialization;
+import com.companyreportsystem.helpers.initializators.PriorityInitialization;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Class responsible for add review
  */
-public class AddDecisionController {
+public class AddDecisionController implements Initializable {
     @FXML
     private Button cancelButton;
 
@@ -24,7 +30,7 @@ public class AddDecisionController {
     private TextField employeeField;
 
     @FXML
-    private TextField priorityField;
+    private ChoiceBox<String> priorityChoiceBox;
 
     @FXML
     private TextField subjectField;
@@ -44,10 +50,8 @@ public class AddDecisionController {
 
     @FXML
     void save() {
-        String query = "INSERT INTO `database`.decisions (date, subject, employee, priority, description) VALUES (?,?,?,?,?)";
-
         if (isDataFieldsBlank()) {
-            DatabaseResponse result = databaseManager.insertDecision(query, dateField.getValue(), subjectField.getText(), employeeField.getText(), priorityField.getText(), descriptionField.getText());
+            DatabaseResponse result = databaseManager.insertDecision(dateField.getValue(), subjectField.getText(), employeeField.getText(), priorityChoiceBox.getValue(), descriptionField.getText());
             if (result == DatabaseResponse.SUCCESS) {
                 alertManager.throwConfirmation("Decision added successfully.");
                 cancel();
@@ -62,6 +66,20 @@ public class AddDecisionController {
     }
 
     private boolean isDataFieldsBlank() {
-        return !subjectField.getText().isBlank() && !employeeField.getText().isBlank() && !priorityField.getText().isBlank() && !descriptionField.getText().isBlank();
+        try {
+            return !subjectField.getText().isBlank() && !employeeField.getText().isBlank() && !priorityChoiceBox.getValue().isBlank() && !descriptionField.getText().isBlank();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        initPriority();
+    }
+
+    private void initPriority() {
+        ChoiceBoxInitialization choiceBoxInitialization = new PriorityInitialization();
+        choiceBoxInitialization.init(priorityChoiceBox);
     }
 }

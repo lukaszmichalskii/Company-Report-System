@@ -1,8 +1,8 @@
 package com.companyreportsystem.guicontrollers.userdashboard;
 
-import com.companyreportsystem.systemlogic.contentloaders.SceneCreator;
-import com.companyreportsystem.systemlogic.contentloaders.SectionLoader;
-import com.companyreportsystem.systemlogic.errorhandling.alertmanager.AlertManager;
+import com.companyreportsystem.helpers.contentloaders.SceneCreator;
+import com.companyreportsystem.helpers.contentloaders.SectionLoader;
+import com.companyreportsystem.helpers.errorhandling.alertmanager.AlertManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

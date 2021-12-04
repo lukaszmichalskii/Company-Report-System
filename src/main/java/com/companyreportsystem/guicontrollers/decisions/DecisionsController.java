@@ -1,11 +1,11 @@
 package com.companyreportsystem.guicontrollers.decisions;
 
-import com.companyreportsystem.systemlogic.contentloaders.SceneCreator;
-import com.companyreportsystem.systemlogic.errorhandling.alertmanager.AlertManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseResponse;
-import com.companyreportsystem.systemlogic.models.Decision;
-import com.companyreportsystem.systemlogic.configurators.tableconfigurators.DecisionTableConfigurator;
+import com.companyreportsystem.helpers.contentloaders.SceneCreator;
+import com.companyreportsystem.helpers.errorhandling.alertmanager.AlertManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseResponse;
+import com.companyreportsystem.helpers.models.Decision;
+import com.companyreportsystem.helpers.configurators.tableconfigurators.DecisionTableConfigurator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -75,9 +75,8 @@ public class DecisionsController implements Initializable {
     private void delete() {
         try {
             Decision decision = decisionTable.getSelectionModel().getSelectedItem();
-            String deleteQuery = "DELETE FROM `database`.decisions WHERE id  =" + decision.getID();
 
-            DatabaseResponse result = databaseManager.delete(deleteQuery);
+            DatabaseResponse result = databaseManager.delete(decision);
             if (result == DatabaseResponse.ERROR) {
                 alertManager.throwError("Error deleting data from database.");
             } else if (result == DatabaseResponse.SUCCESS) {
@@ -85,8 +84,6 @@ public class DecisionsController implements Initializable {
             }
         } catch (Exception e) {
             alertManager.throwError("Error deleting data from database. Select record you want to delete");
-            e.printStackTrace();
-            e.getCause();
         }
     }
 

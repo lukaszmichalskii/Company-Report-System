@@ -16,18 +16,18 @@ module com.companyreportsystem {
     opens com.companyreportsystem.guicontrollers.login;
     opens com.companyreportsystem.guicontrollers.decisions;
     opens com.companyreportsystem.guicontrollers.permissions;
-    opens com.companyreportsystem.systemlogic.models;
+    opens com.companyreportsystem.helpers.models;
     opens com.companyreportsystem.guicontrollers.management;
     opens com.companyreportsystem.guicontrollers.analysis;
     exports com.companyreportsystem;
     exports com.companyreportsystem.guicontrollers.userdashboard;
     opens com.companyreportsystem.guicontrollers.userdashboard to javafx.fxml;
-    opens com.companyreportsystem.systemlogic.databaseconnection;
-    opens com.companyreportsystem.systemlogic.configurators.tableconfigurators;
-    opens com.companyreportsystem.systemlogic.initializators;
-    opens com.companyreportsystem.systemlogic.configurators.choiceboxconfigurators;
-    opens com.companyreportsystem.systemlogic.loginvalidation;
-    opens com.companyreportsystem.systemlogic.query;
-    exports com.companyreportsystem.systemlogic.contentloaders;
-    opens com.companyreportsystem.systemlogic.contentloaders to javafx.fxml;
+    opens com.companyreportsystem.helpers.databaseconnection;
+    opens com.companyreportsystem.helpers.configurators.tableconfigurators;
+    opens com.companyreportsystem.helpers.initializators;
+    opens com.companyreportsystem.helpers.configurators.choiceboxconfigurators;
+    opens com.companyreportsystem.helpers.loginvalidation;
+    opens com.companyreportsystem.helpers.query;
+    exports com.companyreportsystem.helpers.contentloaders;
+    opens com.companyreportsystem.helpers.contentloaders to javafx.fxml;
 }

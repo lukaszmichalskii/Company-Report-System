@@ -1,11 +1,11 @@
 package com.companyreportsystem.guicontrollers.login;
 
-import com.companyreportsystem.systemlogic.contentloaders.SceneCreator;
-import com.companyreportsystem.systemlogic.query.QueryExecutor;
-import com.companyreportsystem.systemlogic.loginvalidation.LoginValidation;
-import com.companyreportsystem.systemlogic.loginvalidation.LoginValidator;
-import com.companyreportsystem.systemlogic.loginvalidation.UserInfoProvider;
-import com.companyreportsystem.systemlogic.loginvalidation.ValidationResult;
+import com.companyreportsystem.helpers.contentloaders.SceneCreator;
+import com.companyreportsystem.helpers.query.QueryExecutor;
+import com.companyreportsystem.helpers.loginvalidation.LoginValidation;
+import com.companyreportsystem.helpers.loginvalidation.LoginValidator;
+import com.companyreportsystem.helpers.loginvalidation.UserInfoProvider;
+import com.companyreportsystem.helpers.loginvalidation.ValidationResult;
 import com.companyreportsystem.guicontrollers.userdashboard.UserDashboardController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -41,7 +41,7 @@ public class LoginController {
     @FXML
     private void login() {
         if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
-            LoginValidation loginValidator = new LoginValidator(usernameField.getText(), passwordField.getText(), new QueryExecutor());
+            LoginValidation loginValidator = new LoginValidator(usernameField.getText(), passwordField.getText());
             ValidationResult result = loginValidator.validate();
 
             if (result == ValidationResult.AUTHORIZATION_OBTAINED) {

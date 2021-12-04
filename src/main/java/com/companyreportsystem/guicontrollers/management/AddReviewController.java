@@ -1,12 +1,12 @@
 package com.companyreportsystem.guicontrollers.management;
 
-import com.companyreportsystem.systemlogic.errorhandling.alertmanager.AlertManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseManager;
-import com.companyreportsystem.systemlogic.databaseconnection.DatabaseResponse;
-import com.companyreportsystem.systemlogic.initializators.ChoiceBoxInitialization;
-import com.companyreportsystem.systemlogic.initializators.DepartmentInitialization;
-import com.companyreportsystem.systemlogic.initializators.PositionsInitialization;
-import com.companyreportsystem.systemlogic.initializators.ReviewInitialization;
+import com.companyreportsystem.helpers.errorhandling.alertmanager.AlertManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseManager;
+import com.companyreportsystem.helpers.databaseconnection.DatabaseResponse;
+import com.companyreportsystem.helpers.initializators.ChoiceBoxInitialization;
+import com.companyreportsystem.helpers.initializators.DepartmentInitialization;
+import com.companyreportsystem.helpers.initializators.PositionsInitialization;
+import com.companyreportsystem.helpers.initializators.ReviewInitialization;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -17,9 +17,6 @@ import java.util.ResourceBundle;
 
 /**
  * Class responsible for add review
- * -database connection
- * -parse query
- * -insert
  */
 public class AddReviewController implements Initializable {
 
@@ -56,11 +53,8 @@ public class AddReviewController implements Initializable {
 
     @FXML
     void save() {
-        String query = "INSERT INTO `database`.reviews (date, firstname, lastname, position, department, evaluation) VALUES (?,?,?,?,?,?)";
-
         if (isReviewFieldsBlank()) {
-            DatabaseResponse result = databaseManager.insertReview(query,
-                    dateField.getValue(),
+            DatabaseResponse result = databaseManager.insertReview(dateField.getValue(),
                     employeeField.getText(),
                     positionChoiceBox.getValue(),
                     departmentChoiceBox.getValue(),
@@ -81,10 +75,14 @@ public class AddReviewController implements Initializable {
     }
 
     private boolean isReviewFieldsBlank() {
-        return !employeeField.getText().isBlank() &&
-                !positionChoiceBox.getValue().isBlank() &&
-                !departmentChoiceBox.getValue().isBlank() &&
-                !reviewChoiceBox.getValue().isBlank();
+        try {
+            return !employeeField.getText().isBlank() &&
+                    !positionChoiceBox.getValue().isBlank() &&
+                    !departmentChoiceBox.getValue().isBlank() &&
+                    !reviewChoiceBox.getValue().isEmpty();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 
